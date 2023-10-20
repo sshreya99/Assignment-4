@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout1</title>
+    <style>
+        body {
+            max-width: 960px;
+            display: grid;
+            font-family: sans-serif;
+
+
+            grid-gap: 20px;
+            margin: 20px auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 70px 300px 150px 50px;
+            grid-template-areas:
+                "logo .    navi navi"
+                "contentSec contentSec contentSec contentSec"
+                "sec2 sec2 sec3 sec3"
+                "footerSec footerSec footerSec footerSec";
+        }
+
+        div,
+        nav ul {
+            background: silver;
+        }
+
+        .logo {
+            grid-area: logo;
+        }
+
+        nav {
+            grid-area: navi;
+            align-self: center;
+        }
+
+        nav ul {
+            grid-template: auto / 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            height: 50px;
+            justify-items: center;
+            align-content: center;
+        }
+
+        .content {
+            grid-area: contentSec;
+        }
+
+        .section1 {
+            grid-area: sec2;
+        }
+
+        .section2 {
+            grid-area: sec3;
+        }
+
+        .footer {
+            grid-area: footerSec;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">Company Logo</div>
+    <nav>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </nav>
+    <div class="content">Featured Product Image</div>
+    <div class="section1">Product 1</div>
+    <div class="section2">Product 2</div>
+    <div class="footer">
+        <p>Copyright Notice</p>
+    </div>
+</body>
+
+</html>
